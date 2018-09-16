@@ -37,7 +37,7 @@ setup(name='tipico',
       package_data={
           'tipico': ['conf/tipico.conf'],
       },
-      install_requires=["plico>=0.12",
+      install_requires=["plico>=0.14",
                         "numpy",
                         "ipython",
                         "matplotlib",
