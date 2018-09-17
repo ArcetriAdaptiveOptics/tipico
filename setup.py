@@ -47,7 +47,8 @@ setup(name='tipico',
                         "pyfits",
                         "futures",
                         'pyside2',
-                        "Qt.py"
+                        "Qt.py",
+                        "pathlib2; python_version < '3'"
                         ],
       include_package_data=True,
       test_suite='test',
