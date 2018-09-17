@@ -46,7 +46,6 @@ setup(name='tipico',
                         "pyfits",
                         "futures",
                         'pyside2; python_version != "3.4" ',
-                        "pyqt5; python_version == '3.4' ",
                         "Qt.py"
                         ],
       include_package_data=True,
