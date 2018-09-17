@@ -10,7 +10,7 @@ tipico is a useless application to test the [plico][plico] environment.
 [travis]: https://travis-ci.com/lbusoni/tipico.svg?branch=master "go to travis"
 [travislink]: https://travis-ci.com/lbusoni/tipico
 [coveralls]: https://coveralls.io/repos/github/lbusoni/tipico/badge.svg?branch=master "go to coveralls"
-[coverallslink]: https://coveralls.io/repos/github/lbusoni/tipico
+[coverallslink]: https://coveralls.io/github/lbusoni/tipico
 
 
 ## Installation
