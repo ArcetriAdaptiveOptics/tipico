@@ -12,13 +12,9 @@ def _getDefaultConfigFilePath():
 
 defaultConfigFilePath= _getDefaultConfigFilePath()
 
-#serversId= [Constants.SERVER_1_CONFIG_SECTION,
-#            Constants.SERVER_2_CONFIG_SECTION]
 
 
-
-
-def DeformableMirror(hostname, port):
+def instrument(hostname, port):
 
     from tipico.client.instrument_client import InstrumentClient
     from plico.rpc.zmq_remote_procedure_call import ZmqRemoteProcedureCall
