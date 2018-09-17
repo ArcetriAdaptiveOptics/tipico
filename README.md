@@ -75,48 +75,62 @@ tipico_start
 
 In a Python / IPython shell:
 
+
+Create a client of the device (suppose the server is running on localhost on port 60010)
+
 ```
 In [1]: import tipico
 
-In [2]: dm1= tipico.DeformableMirror('AlpaoDM277')
-
-In [3]: dm2= tipico.DeformableMirror('MemsMultiDM')
-
-In [4]: dm1.getSnapshot('boo')
-Out[4]: {'boo.COMMAND_COUNTER': 0, 'boo.SERIAL_NUMBER': '1', 'boo.STEP_COUNTER': 45956}
-
-In [5]: dm1.applyZonalCommand(np.ones(277))
-
-In [6]: dm1.getZonalCommand()
-Out[6]:
-array([1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
-       1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
-       1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
-       1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
-       1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
-       1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
-       1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
-       1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
-       1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
-       1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
-       1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
-       1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
-       1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
-       1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
-       1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
-       1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
-       1., 1., 1., 1., 1.])
-
-In [7]: dm1.getSnapshot('boo')
-Out[7]: {'boo.COMMAND_COUNTER': 1, 'boo.SERIAL_NUMBER': '1', 'boo.STEP_COUNTER': 83589}
-
-In [8]: dm2.getSnapshot('tux')
-Out[8]:
-{'tux.COMMAND_COUNTER': 0,
- 'tux.SERIAL_NUMBER': '234',
- 'tux.STEP_COUNTER': 95980}
+In [2]: instr= tipico.instrument('localhost', 60010)
 ```
 
+Get position and move actuator
+
+
+```
+In [3]: instr.getPosition()
+Out[3]: 0
+
+In [6]: instr.moveTo(np.array([42, 3.14]))
+
+In [7]: instr.getPosition()
+Out[7]: array([42.  ,  3.14])
+
+```
+
+
+Get position and move actuator
+
+
+```
+
+In [8]: status=instr.getStatus()
+
+In [9]: status.actuatorCommands()
+Out[9]: array([42.  ,  3.14])
+
+In [10]: status.commandCounter()
+Out[10]: 1
+
+In [11]: instr.moveTo(np.array([1, 2]))
+
+In [12]: status=instr.getStatus()
+
+In [13]: status.commandCounter()
+Out[13]: 2
+
+In [14]: status.actuatorCommands()
+Out[14]: array([1, 2])
+
+In [15]: instr.getPosition()
+Out[15]: array([1, 2])
+
+In [16]: instr.getSnapshot('tux')
+Out[16]: {'tux.COMMAND_COUNTER': 2, 'tux.SERIAL_NUMBER': '1', 'tux.STEP_COUNTER': 17065}
+
+In [17]: instr.getSnapshot('tux')
+Out[17]: {'tux.COMMAND_COUNTER': 2, 'tux.SERIAL_NUMBER': '1', 'tux.STEP_COUNTER': 21225}
+```
 
 
 ### Stopping Tipico
