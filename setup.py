@@ -48,6 +48,7 @@ setup(name='tipico',
                         "appdirs",
                         "pyfits",
                         "futures",
+                        "pyside2",
                         "Qt.py"
                         ],
       include_package_data=True,
