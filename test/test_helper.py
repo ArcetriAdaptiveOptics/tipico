@@ -233,7 +233,8 @@ class TestHelper(object):
     def executeQtGUITestsWithXvfb(testClass, argv, XvfbLogPath='./xvfb.log'):
         result= None
         qtApp= None
-        from PyQt5 import QtWidgets
+        import Qt
+        from Qt import QtWidgets
         with Xvfb.launch(XvfbLogPath) as xvfb:
             qtApp= QtWidgets.QApplication(argv)
             result= unittest.TextTestRunner().run(
