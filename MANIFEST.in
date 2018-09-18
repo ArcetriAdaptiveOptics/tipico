@@ -1,3 +1,4 @@
+include README.md LICENSE
 recursive-include test *
 recursive-include tipico/conf *
 recursive-include tipico/calib *
