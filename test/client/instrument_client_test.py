@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 import unittest
+from tipico.client.instrument_client import InstrumentClient
+from tipico.utils.timeout import Timeout
 from plico.utils.decorator import override
+from tipico.types.instrument_status import InstrumentStatus
 from plico.rpc.dummy_remote_procedure_call import DummyRpcHandler
 from plico.rpc.dummy_sockets import DummySockets
 
