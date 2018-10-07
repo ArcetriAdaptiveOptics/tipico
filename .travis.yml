@@ -6,24 +6,21 @@ matrix:
         - os: linux
           sudo: required
           python: 2.7
-          env: TOXENV=py27
         - os: linux
           sudo: required
           python: 3.5
-          env: TOXENV=py35
         - os: linux
           sudo: required
           python: 3.6
-          env: TOXENV=py36
         - os: osx
           language: generic
-          env: TOXENV=py27
+          env: PYTHON=2.7
         - os: osx
           language: generic
-          env: TOXENV=py35
+          env: PYTHON=3.5
         - os: osx
           language: generic
-          env: TOXENV=py36
+          env: PYTHON=3.6
 
 before_install:
     - if [ "${TRAVIS_OS_NAME}" == "osx" ]; then
@@ -40,7 +37,7 @@ install:
   - if [ "${TRAVIS_OS_NAME}" == "osx" ]; then
      conda create -n testenv --yes --quiet pip python=$PYTHON;
      source activate testenv;
-     conda install --yes --quiet numpy$NUMPY nose pytest cython;
+     conda install --yes --quiet numpy pytest cython;
     fi;
   - if [ "${TRAVIS_OS_NAME}" == "linux" ]; then
      sudo apt-get update;
