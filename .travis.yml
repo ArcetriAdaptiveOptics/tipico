@@ -1,13 +1,48 @@
 language: python
-sudo: true
-python:
-  - "2.7"
-  - "3.5"
-  - "3.6"
+sudo: false
 
-install: 
-  - sudo apt-get update
-  - sudo apt-get -y install python3-pyqt5
+matrix:
+    include:
+        - os: linux
+          sudo: required
+          python: 2.7
+        - os: linux
+          sudo: required
+          python: 3.5
+        - os: linux
+          sudo: required
+          python: 3.6
+        - os: osx
+          language: generic
+          env: PYTHON=2.7
+        - os: osx
+          language: generic
+          env: PYTHON=3.5
+        - os: osx
+          language: generic
+          env: PYTHON=3.6
+
+before_install:
+    - if [ "${TRAVIS_OS_NAME}" == "osx" ]; then
+        wget -q http://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O miniconda.sh;
+        chmod +x miniconda.sh;
+        ./miniconda.sh -b -p ~/anaconda;
+        export PATH=~/anaconda/bin:$PATH;
+        conda config --add channels conda-forge;
+        conda update --yes --quiet conda;
+      fi;
+
+
+install:
+  - if [ "${TRAVIS_OS_NAME}" == "osx" ]; then
+     conda create -n testenv --yes --quiet pip python=$PYTHON;
+     source activate testenv;
+     conda install --yes --quiet numpy pytest cython;
+    fi;
+  - if [ "${TRAVIS_OS_NAME}" == "linux" ]; then
+     sudo apt-get update;
+     sudo apt-get -y install python3-pyqt5;
+    fi;
   - pip install .
   - pip install coveralls
   
