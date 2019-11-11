@@ -14,13 +14,13 @@ matrix:
           python: 3.6
         - os: osx
           language: generic
-          env: PYTHON=2.7
-        - os: osx
-          language: generic
           env: PYTHON=3.5
         - os: osx
           language: generic
           env: PYTHON=3.6
+        - os: osx
+          language: generic
+          env: PYTHON=3.7
 
 before_install:
     - if [ "${TRAVIS_OS_NAME}" == "osx" ]; then
@@ -37,7 +37,7 @@ install:
   - if [ "${TRAVIS_OS_NAME}" == "osx" ]; then
      conda create -n testenv --yes --quiet pip python=$PYTHON;
      source activate testenv;
-     conda install --yes --quiet numpy pytest cython;
+     conda install --yes --quiet numpy pytest cython astropy;
     fi;
   - if [ "${TRAVIS_OS_NAME}" == "linux" ]; then
      sudo apt-get update;
