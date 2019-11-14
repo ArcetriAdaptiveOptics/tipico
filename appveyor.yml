@@ -44,8 +44,8 @@ install:
 build: false  # Not a C# project, build stuff at the test step instead.
 
 test_script:
-  # Run the project tests (don't do examples because they are too slow)
-  - "python make test unit"
+  # Run the project tests 
+  - "python setup.py test"
 
 on_success:
   - "coveralls"
