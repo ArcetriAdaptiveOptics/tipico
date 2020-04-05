@@ -1,6 +1,7 @@
 # TIPICO: Test Inutile per Provare Inutilmente pliCO
 
-| [![Build Status][travis]][travislink] | [![Coverage Status][coveralls]][coverallslink] | 
+[![Build Status][travis]][travislink]  [![Coverage Status][coveralls]][coverallslink]  [![Documentation Status](https://readthedocs.org/projects/tipico/badge/?version=latest)](https://tipico.readthedocs.io/en/latest/?badge=latest)
+
 
 tipico is a useless application to test the [plico][plico] environment.
 
