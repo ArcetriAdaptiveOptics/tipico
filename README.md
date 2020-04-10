@@ -7,11 +7,11 @@ tipico is a useless application to test the [plico][plico] environment.
 
 
 
-[plico]: https://github.com/lbusoni/plico
-[travis]: https://travis-ci.com/lbusoni/tipico.svg?branch=master "go to travis"
-[travislink]: https://travis-ci.com/lbusoni/tipico
-[coveralls]: https://coveralls.io/repos/github/lbusoni/tipico/badge.svg?branch=master "go to coveralls"
-[coverallslink]: https://coveralls.io/github/lbusoni/tipico
+[plico]: https://github.com/ArcetriAdaptiveOptics/plico
+[travis]: https://travis-ci.com/ArcetriAdaptiveOptics/tipico.svg?branch=master "go to travis"
+[travislink]: https://travis-ci.com/ArcetriAdaptiveOptics/tipico
+[coveralls]: https://coveralls.io/repos/github/ArcetriAdaptiveOptics/tipico/badge.svg?branch=master "go to coveralls"
+[coverallslink]: https://coveralls.io/github/ArcetriAdaptiveOptics/tipico
 
 
 ## Installation
