@@ -1,10 +1,8 @@
 # TIPICO: Test Inutile per Provare Inutilmente pliCO
 
-[![Build Status][travis]][travislink]  [![Coverage Status][coveralls]][coverallslink]  [![Documentation Status](https://readthedocs.org/projects/tipico/badge/?version=latest)](https://tipico.readthedocs.io/en/latest/?badge=latest)
-
+[![Build Status][travis]][travislink]  [![Coverage Status][coveralls]][coverallslink]  [![Documentation Status](https://readthedocs.org/projects/tipico/badge/?version=latest)](https://tipico.readthedocs.io/en/latest/?badge=latest) [![PyPI version][pypiversion]][pypiversionlink]
 
 tipico is a useless application to test the [plico][plico] environment.
-
 
 
 [plico]: https://github.com/ArcetriAdaptiveOptics/plico
@@ -12,6 +10,9 @@ tipico is a useless application to test the [plico][plico] environment.
 [travislink]: https://travis-ci.com/ArcetriAdaptiveOptics/tipico
 [coveralls]: https://coveralls.io/repos/github/ArcetriAdaptiveOptics/tipico/badge.svg?branch=master "go to coveralls"
 [coverallslink]: https://coveralls.io/github/ArcetriAdaptiveOptics/tipico
+[allied]: https://www.alliedvision.com
+[pypiversion]: https://badge.fury.io/py/tipico.svg
+[pypiversionlink]: https://badge.fury.io/py/tipico
 
 
 ## Installation
