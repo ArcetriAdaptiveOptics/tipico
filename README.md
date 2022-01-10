@@ -1,18 +1,17 @@
 # TIPICO: Test Inutile per Provare Inutilmente pliCO
 
-[![Build Status][travis]][travislink]  [![Coverage Status][coveralls]][coverallslink]  [![Documentation Status](https://readthedocs.org/projects/tipico/badge/?version=latest)](https://tipico.readthedocs.io/en/latest/?badge=latest) [![PyPI version][pypiversion]][pypiversionlink]
+
+ ![Python package](https://github.com/ArcetriAdaptiveOptics/tipico/workflows/Python%20package/badge.svg)
+ [![codecov](https://codecov.io/gh/ArcetriAdaptiveOptics/tipico/branch/main/graph/badge.svg?token=ApWOrs49uw)](https://codecov.io/gh/ArcetriAdaptiveOptics/tipico)
+ [![Documentation Status](https://readthedocs.org/projects/tipico/badge/?version=latest)](https://tipico.readthedocs.io/en/latest/?badge=latest)
+ [![PyPI version](https://badge.fury.io/py/tipico.svg)](https://badge.fury.io/py/tipico)
+
+
 
 tipico is a useless application to test the [plico][plico] environment.
 
 
 [plico]: https://github.com/ArcetriAdaptiveOptics/plico
-[travis]: https://travis-ci.com/ArcetriAdaptiveOptics/tipico.svg?branch=master "go to travis"
-[travislink]: https://travis-ci.com/ArcetriAdaptiveOptics/tipico
-[coveralls]: https://coveralls.io/repos/github/ArcetriAdaptiveOptics/tipico/badge.svg?branch=master "go to coveralls"
-[coverallslink]: https://coveralls.io/github/ArcetriAdaptiveOptics/tipico
-[allied]: https://www.alliedvision.com
-[pypiversion]: https://badge.fury.io/py/tipico.svg
-[pypiversionlink]: https://badge.fury.io/py/tipico
 
 
 ## Installation
