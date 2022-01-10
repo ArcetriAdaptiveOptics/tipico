@@ -1,6 +1,6 @@
 
 import os
-import pyfits
+from astropy.io import fits
 from tipico.calibration.abstract_calibration_manager import \
     AbstractCalibrationManager
 from plico.utils.decorator import override, returnsNone, returns, cacheResult
@@ -44,9 +44,9 @@ class CalibrationManager(AbstractCalibrationManager,
         self._checkTag(tag)
         fileName= self.getEncoderCalibrationFileName(tag)
         self._createFoldersIfMissing(fileName)
-        pyfits.writeto(fileName,
-                       encoderCalibration.coefficients,
-                       clobber=False)
+        fits.writeto(fileName,
+                     encoderCalibration.coefficients,
+                     overwrite=False)
 
 
     @override
@@ -55,5 +55,5 @@ class CalibrationManager(AbstractCalibrationManager,
     def loadEncoderCalibration(self, tag):
         self._checkTag(tag)
         fileName= self.getEncoderCalibrationFileName(tag)
-        hduList= pyfits.open(fileName)
+        hduList= fits.open(fileName)
         return EncoderCalibration(hduList[0].data)
