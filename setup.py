@@ -95,7 +95,6 @@ setup(name=NAME,
                         "astropy",
                         'pyside2',
                         "Qt.py",
-                        "pathlib2; python_version < '3'"
                         ],
       include_package_data=True,
       cmdclass={'upload': UploadCommand, },
